@@ -40,7 +40,7 @@ public class urlDAOImpl implements urlDAO{
         	        public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
         	            PreparedStatement pst =
         	                con.prepareStatement(sql, new String[] {"id"});
-        	            pst.setString(1, url.getLongURL());
+        	            pst.setString(1, url.getLongURL().replace("http://","").replace("https://",""));
         	            return pst;
         	        }
         	    },

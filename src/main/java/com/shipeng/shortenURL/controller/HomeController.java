@@ -35,7 +35,8 @@ public class HomeController {
 	public ModelAndView listContact(ModelAndView model) throws IOException{
 		List<URL> listURL = urlDAO.list();
 		for (URL url : listURL){
-			url.setShortURL("localhost:8080/shortenURL/redirect/" + helper.idToShortURL(url.getId()));
+			//url.setShortURL("localhost:8080/shortenURL/redirect/" + helper.idToShortURL(url.getId()));
+			url.setShortURL("localhost:8888/" + helper.idToShortURL(url.getId()));
 		}
 		model.addObject("listURL", listURL);
 		model.setViewName("home");  
